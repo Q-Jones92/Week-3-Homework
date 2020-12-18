@@ -5,18 +5,29 @@ function writePassword() {
     var passwordText = document.querySelector("#password");
 
     passwordText.value = password;
+        console.log(password);
+    
 
 }
 
-
-
-
 function generatePassword() {
-    var length = 8,
-        charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()+=-_?/<>.,",
+    alert('')
+    
+    alert('Select a password length between 8 and 128');
+    
+     var inputNumber = prompt('Range between 8-128');
+        if (inputNumber > 8 && inputNumber < 128); {
+            console.log('inputNumber is valid');
+        } 
+       
+    alert('Memorize and keep secure')
+    var   charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()+=-_?/<>.,",
         retVal = "";
-    for (var i = 0, n = charset.length; i < length; ++i) {
-        retVal += charset.charAt(Math.floor(Math.random() * n));
+    for (var i = 0; i < inputNumber; ++i) {
+
+        var randomChar = charset.charAt(Math.floor(Math.random() * charset.length));
+        console.log(randomChar);
+        retVal += randomChar
     }
     return retVal;
 }
