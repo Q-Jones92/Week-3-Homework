@@ -11,8 +11,15 @@ function writePassword() {
 }
 
 function generatePassword() {
-    alert('')
-    
+    alert('Select which characters you would like the password to have');
+
+    var inputCharacter = prompt('Capital case(A), Lower case(a), Special characters(!), Numbers(0');
+        if((inputCharacter === 'A') ||
+          (inputCharacter === 'a') ||
+          (inputCharacter === '!') ||
+          (inputCharacter === '0')) {
+            console.log('no changes')  
+          }
     alert('Select a password length between 8 and 128');
     
      var inputNumber = prompt('Range between 8-128');
@@ -21,6 +28,7 @@ function generatePassword() {
         } 
        
     alert('Memorize and keep secure')
+    
     var   charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()+=-_?/<>.,",
         retVal = "";
     for (var i = 0; i < inputNumber; ++i) {
